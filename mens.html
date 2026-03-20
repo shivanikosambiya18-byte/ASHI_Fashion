@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Men's Wear - ASHI Fashion</title>
+  <link rel="stylesheet" href="mens.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT MARQUEE BAR -->
+<div class="announcement-bar">
+  <div class="marquee-track">
+    <span>Free Shipping on orders above 10,000+</span>
+    <span>10,000+ Happy Customers</span>
+    <span>New Eid Collection 2026 Just Dropped</span>
+    <span>Easy Returns & Exchange</span>
+    <span>Video Call Shopping Available 24x7</span>
+    <span>Secure Payments | 100% Authentic</span>
+    <span>Free Shipping on orders above 10,000+</span>
+    <span>10,000+ Happy Customers</span>
+    <span>New Eid Collection 2026 Just Dropped</span>
+    <span>Easy Returns & Exchange</span>
+    <span>Video Call Shopping Available 24x7</span>
+    <span>Secure Payments | 100% Authentic</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="top-bar">
+    <div class="top-left">
+      <a href="index.html">WOMEN</a>
+      <a class="active">MEN</a>
+      <a>BRIDAL</a>
+        <a class="luxe">LUXE</a>
+        <a class="store"><i class="fa fa-store"></i> Find Store</a>
+    </div>
+
+    <!-- LOGO -->
+    <div class="logo">ASHI <span>FASHION</span></div>
+
+    <!-- SEARCH-BAR -->
+    <div class="top-right">
+      <div class="search-box">
+        <i class="fa fa-search" id="searchIcon"></i>
+        <input type="text" id="searchInput" placeholder="Search...">
+      </div>
+
+
+      <!-- REGISTER SECTION -->
+        <div class="user-section">
+          <a href="../Registration/Registration.html" id="registerBtn" style="color:black; text-decoration:none;">
+            <i class="fa fa-user"></i> 
+          </a>
+            <span id="userName" style="display:none; font-weight:600;"></span>
+        </div>
+
+      <!-- WISH LIST -->
+        <i class="fa fa-heart"></i>
+
+        <!-- CART BOX -->
+        <div class="cart-box">
+        <i class="fa fa-bag-shopping" id="cartIcon" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" style="cursor:pointer;"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+
+        <!-- LOGOUT BUTTON -->
+        <div class="logout" style="display:none;">
+            <button onclick="logout()" style="padding:6px 12px; background:#1a1a2e; color:white; border:none; cursor:pointer; font-size:13px; border-radius:4px;">Logout</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <!-- MEN CATEGORY BAR -->
+  <div class="category-bar">
+    <a class="badge">NEW IN</a>
+    <a class="badge">SALE</a>
+    <a onclick="filterByCategory('all')">ALL</a>
+    <a onclick="filterByCategory('kurta')">KURTA SETS</a>
+    <a onclick="filterByCategory('sherwani')">SHERWANIS</a>
+    <a onclick="filterByCategory('indo')">INDO WESTERN</a>
+    <a onclick="filterByCategory('jodhpuri')">JODHPURI</a>
+    <a onclick="filterByCategory('jacket')">KURTA JACKET</a>
+    <a onclick="filterByCategory('dhoti')">DHOTI SETS</a>
+    <a class="dark">WEDDING WEAR</a>
+    <a>ACCESSORIES</a>
+  </div>
+</header>
+
+<!-- MEN HERO SECTION -->
+<section class="men-hero fade-in">
+  <div class="hero-left">
+    <div class="men-tag">✦ New Collection 2026</div>
+    <h1>ROYAL <span>MEN'S</span><br>ETHNIC WEAR</h1>
+    <p>From classic sherwanis to modern indo-western fusion — discover premium ethnic wear crafted for the modern Indian man.</p>
+    <div class="hero-btns">
+      <a href="#mens-products" class="btn-primary-gold">SHOP NOW</a>
+      <a href="#wedding-special" class="btn-outline-white">WEDDING WEAR</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Styles</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Fabrics</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4.9★</div>
+        <div class="stat-label">Rating</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-card">
+      <img src="../Women/images/mens.jpg" alt="Men's Ethnic Wear">
+    </div>
+    <div class="hero-img-card tall">
+      <img src="../Women/images/p5.jpg" alt="Kurta Set">
+    </div>
+  </div>
+</section>
+
+<!-- OCCASION STRIP -->
+<section class="occasion-strip">
+  <h3>Shop By Occasion</h3>
+  <div class="occasion-tabs">
+    <div class="occ-tab active" onclick="setOccasion(this,'all')">All Occasions</div>
+    <div class="occ-tab" onclick="setOccasion(this,'wedding')">💍 Wedding</div>
+    <div class="occ-tab" onclick="setOccasion(this,'sangeet')">🎶 Sangeet</div>
+    <div class="occ-tab" onclick="setOccasion(this,'haldi')">🌿 Haldi</div>
+    <div class="occ-tab" onclick="setOccasion(this,'reception')">🥂 Reception</div>
+    <div class="occ-tab" onclick="setOccasion(this,'festival')">🪔 Festival</div>
+    <div class="occ-tab" onclick="setOccasion(this,'casual')">👕 Casual</div>
+    <div class="occ-tab" onclick="setOccasion(this,'party')">🎉 Party Wear</div>
+  </div>
+</section>
+
+<!-- SHOP BY CATEGORY -->
+<section class="men-categories">
+  <div class="section-title">Shop By Category</div>
+  <div class="section-sub">Premium ethnic wear for every occasion</div>
+  <div class="cat-grid">
+    <div class="cat-card" onclick="filterByCategory('kurta')">
+      <div class="cat-badge">BESTSELLER</div>
+      <img src="../Women/images/p5.jpg" alt="Kurta Sets">
+      <div class="cat-info"><h4>Kurta Sets</h4><span>₹2,999 onwards</span></div>
+    </div>
+    <div class="cat-card" onclick="filterByCategory('sherwani')">
+      <div class="cat-badge" style="background:#1a1a2e;">PREMIUM</div>
+      <img src="../Women/images/mens.jpg" alt="Sherwanis">
+      <div class="cat-info"><h4>Sherwanis</h4><span>₹11,000 onwards</span></div>
+    </div>
+    <div class="cat-card" onclick="filterByCategory('indo')">
+      <img src="../Women/images/f7.jpg" alt="Indo Western">
+      <div class="cat-info"><h4>Indo Western</h4><span>₹5,999 onwards</span></div>
+    </div>
+    <div class="cat-card" onclick="filterByCategory('jacket')">
+      <div class="cat-badge" style="background:#e74c3c;">NEW</div>
+      <img src="../Women/images/f1.jpg" alt="Jacket Sets">
+      <div class="cat-info"><h4>Jacket Sets</h4><span>₹4,999 onwards</span></div>
+    </div>
+    <div class="cat-card" onclick="filterByCategory('jodhpuri')">
+      <img src="../Women/images/f2.jpg" alt="Jodhpuri">
+      <div class="cat-info"><h4>Jodhpuri Suits</h4><span>₹8,999 onwards</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEN PRODUCTS -->
+<section class="men-products" id="mens-products">
+  <div class="products-header">
+    <div>
+      <h2 class="section-title" style="font-size:28px; margin-bottom:5px;">Men's Collection</h2>
+      <p style="color:#888; font-size:13px;">Showing <span id="productCount">8</span> products</p>
+    </div>
+    <div style="display:flex; gap:15px; align-items:center; flex-wrap:wrap;">
+      <div style="display:flex; gap:10px; flex-wrap:wrap;" id="filterBar">
+        <button class="filter-btn active" onclick="filterProducts('all',this)">All</button>
+        <button class="filter-btn" onclick="filterProducts('kurta',this)">Kurta</button>
+        <button class="filter-btn" onclick="filterProducts('sherwani',this)">Sherwani</button>
+        <button class="filter-btn" onclick="filterProducts('indo',this)">Indo Western</button>
+        <button class="filter-btn" onclick="filterProducts('jacket',this)">Jacket Set</button>
+      </div>
+      <select class="sort-select" onchange="sortMenProducts(this.value)">
+        <option value="">Sort By</option>
+        <option value="low">Price: Low → High</option>
+        <option value="high">Price: High → Low</option>
+        <option value="az">Name A → Z</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="men-product-grid" id="menProductGrid">
+
+    <div class="men-product-card" data-cat="kurta" data-price="4059" data-name="Pashmina Kurta Pant Set">
+      <div class="men-heart" onclick="toggleHeart(this)"><i class="fa fa-heart"></i></div>
+      <div style="position:relative; overflow:hidden;">
+        <img src="../Women/images/f1.jpg" alt="Kurta">
+        <div class="product-overlay">
+          <button class="quick-add" onclick="addToCart(event,'Pashmina Kurta Pant Set','₹4,059','images/f1.jpg')">+ QUICK ADD</button>
+        </div>
+      </div>
+      <div class="card-body-info">
+        <div style="display:inline-block; background:#b77b4b; color:white; font-size:9px; padding:2px 7px; border-radius:3px; margin-bottom:5px; font-weight:600;">30% OFF</div>
+        <h4>Pashmina Kurta Pant Set for Men</h4>
+        <div class="card-price">₹4,059 <span class="old">₹5,799</span> <span class="off">30% OFF</span></div>
+        <div class="card-colors">
+          <div class="color-dot" style="background:#c8a882;" title="Beige"></div>
+          <div class="color-dot" style="background:#4a3728;" title="Brown"></div>
+          <div class="color-dot" style="background:#1a1a2e;" title="Navy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="men-product-card" data-cat="kurta" data-price="5099" data-name="Pista Green Kurta Set">
+      <div class="men-heart" onclick="toggleHeart(this)"><i class="fa fa-heart"></i></div>
+      <div style="position:relative; overflow:hidden;">
+        <img src="../Women/images/f2.jpg" alt="Green Kurta">
+        <div class="product-overlay">
+          <button class="quick-add" onclick="addToCart(event,'Pista Green Kurta Set','₹5,099','images/f2.jpg')">+ QUICK ADD</button>
+        </div>
+      </div>
+      <div class="card-body-info">
+        <div style="display:inline-block; background:#b77b4b; color:white; font-size:9px; padding:2px 7px; border-radius:3px; margin-bottom:5px; font-weight:600;">15% OFF</div>
+        <h4>Pista Green Mens Kurta Pant Set</h4>
+        <div class="card-price">₹5,099 <span class="old">₹5,999</span> <span class="off">15% OFF</span></div>
+        <div class="card-colors">
+          <div class="color-dot" style="background:#7eb888;" title="Green"></div>
+          <div class="color-dot" style="background:#f5e6c8;" title="Cream"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="men-product-card" data-cat="sherwani" data-price="19199" data-name="Wine Sherwani Set">
+      <div class="men-heart" onclick="toggleHeart(this)"><i class="fa fa-heart"></i></div>
+      <div class="festive-tag">BESTSELLER</div>
+      <div style="position:relative; overflow:hidden;">
+        <img src="../Women/images/mens.jpg" alt="Sherwani">
+        <div class="product-overlay">
+          <button class="quick-add" onclick="addToCart(event,'Wine Sherwani Set','₹19,199','images/mens.jpg')">+ QUICK ADD</button>
+        </div>
+      </div>
+      <div class="card-body-info">
+        <h4>Wine Sherwani Set With Minimalist Design</h4>
+        <div class="card-price">₹19,199 <span class="old">₹22,599</span> <span class="off">15% OFF</span></div>
+        <div class="card-colors">
+          <div class="color-dot" style="background:#722f37;" title="Wine"></div>
+          <div class="color-dot" style="background:#1a1a2e;" title="Navy"></div>
+          <div class="color-dot" style="background:#c8a862;" title="Gold"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="men-product-card" data-cat="indo" data-price="8479" data-name="Multicolour Silk Kurta Set">
+      <div class="men-heart" onclick="toggleHeart(this)"><i class="fa fa-heart"></i></div>
+      <div style="position:relative; overflow:hidden;">
+        <img src="../Women/images/f7.jpg" alt="Indo Western">
+        <div class="product-overlay">
+          <button class="quick-add" onclick="addToCart(event,'Multicolour Silk Kurta Set','₹8,479','images/f7.jpg')">+ QUICK ADD</button>
+        </div>
+      </div>
+      <div class="card-body-info">
+        <div style="display:inline-block; background:#b77b4b; color:white; font-size:9px; padding:2px 7px; border-radius:3px; margin-bottom:5px; font-weight:600;">20% OFF</div>
+        <h4>Multicolour Silk Kurta Set With Artistic Brushstroke Print</h4>
+        <div class="card-price">₹8,479 <span class="old">₹10,599</span> <span class="off">20% OFF</span></div>
+        <div class="card-colors">
+          <div class="color-dot" style="background:linear-gradient(135deg,#f06,#f90,#09f);" title="Multi"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="men-product-card" data-cat="sherwani" data-price="24479" data-name="Navy Blue Embroidered Sherwani">
+      <div class="men-heart" onclick="toggleHeart(this)"><i class="fa fa-heart"></i></div>
+      <div class="festive-tag" style="background:#1a1a2e;">PREMIUM</div>
+      <div style="position:relative; overflow:hidden;">
+        <img src="../Women/images/p5.jpg" alt="Navy Sherwani">
+        <div class="product-overlay">
+          <button class="quick-add" onclick="addToCart(event,'Navy Blue Sherwani Set','₹24,479','images/p5.jpg')">+ QUICK ADD</button>
+        </div>
+      </div>
+      <div class="card-body-info">
+        <h4>Navy Blue Embroidered Sherwani Kurta Set</h4>
+        <div class="card-price">₹24,479 <span class="old">₹28,799</span> <span class="off">15% OFF</span></div>
+        <div class="card-colors">
+          <div class="color-dot" style="background:#1a2e5e;" title="Navy"></div>
+          <div class="color-dot" style="background:#c8a862;" title="Gold"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="men-product-card" data-cat="jacket" data-price="12400" data-name="Black Kurta Jacket Set">
+      <div class="men-heart" onclick="toggleHeart(this)"><i class="fa fa-heart"></i></div>
+      <div style="position:relative; overflow:hidden;">
+        <img src="../Women/images/p3.jpg" alt="Jacket Set">
+        <div class="product-overlay">
+          <button class="quick-add" onclick="addToCart(event,'Black Kurta Jacket Set','₹12,400','images/p3.jpg')">+ QUICK ADD</button>
+        </div>
+      </div>
+      <div class="card-body-info">
+        <div style="display:inline-block; background:#b77b4b; color:white; font-size:9px; padding:2px 7px; border-radius:3px; margin-bottom:5px; font-weight:600;">20% OFF</div>
+        <h4>Black Kurta Jacket Set With Embroidery</h4>
+        <div class="card-price">₹12,400 <span class="old">₹15,500</span> <span class="off">20% OFF</span></div>
+        <div class="card-colors">
+          <div class="color-dot" style="background:#1a1a1a;" title="Black"></div>
+          <div class="color-dot" style="background:#722f37;" title="Wine"></div>
+          <div class="color-dot" style="background:#1a2e5e;" title="Navy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="men-product-card" data-cat="indo" data-price="17996" data-name="Orange Chinon Indo Western Set">
+      <div class="men-heart" onclick="toggleHeart(this)"><i class="fa fa-heart"></i></div>
+      <div style="position:relative; overflow:hidden;">
+        <img src="../Women/images/f4.jpg" alt="Indo Western">
+        <div class="product-overlay">
+          <button class="quick-add" onclick="addToCart(event,'Orange Indo Western Set','₹17,996','images/f4.jpg')">+ QUICK ADD</button>
+        </div>
+      </div>
+      <div class="card-body-info">
+        <div style="display:inline-block; background:#b77b4b; color:white; font-size:9px; padding:2px 7px; border-radius:3px; margin-bottom:5px; font-weight:600;">10% OFF</div>
+        <h4>Orange Chinon Indo Western Set With Zardosi Work</h4>
+        <div class="card-price">₹17,996 <span class="old">₹19,995</span> <span class="off">10% OFF</span></div>
+        <div class="card-colors">
+          <div class="color-dot" style="background:#e85e26;" title="Orange"></div>
+          <div class="color-dot" style="background:#c8a862;" title="Gold"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="men-product-card" data-cat="kurta" data-price="6999" data-name="Beige Nehru Jacket Kurta Set">
+      <div class="men-heart" onclick="toggleHeart(this)"><i class="fa fa-heart"></i></div>
+      <div class="festive-tag" style="background:#e74c3c;">NEW</div>
+      <div style="position:relative; overflow:hidden;">
+        <img src="../Women/images/p4.jpg" alt="Nehru Jacket">
+        <div class="product-overlay">
+          <button class="quick-add" onclick="addToCart(event,'Beige Nehru Jacket Set','₹6,999','images/p4.jpg')">+ QUICK ADD</button>
+        </div>
+      </div>
+      <div class="card-body-info">
+        <h4>Beige Silk Nehru Jacket Kurta Set with Resham Work</h4>
+        <div class="card-price">₹6,999 <span class="old">₹8,999</span> <span class="off">22% OFF</span></div>
+        <div class="card-colors">
+          <div class="color-dot" style="background:#c8a882;" title="Beige"></div>
+          <div class="color-dot" style="background:#f5e6c8;" title="Ivory"></div>
+          <div class="color-dot" style="background:#4a3728;" title="Brown"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-top:40px;">
+    <button onclick="alert('Loading more products...')" style="padding:14px 40px; background:#1a1a2e; color:white; border:none; cursor:pointer; font-weight:600; letter-spacing:1px; font-size:14px;">LOAD MORE</button>
+  </div>
+</section>
+
+<!-- OFFER BANNER -->
+<div class="offer-banner">
+  <div class="offer-text">
+    <h2>Men's Wedding Special 🎊</h2>
+    <p>Get exclusive discount on all wedding wear. Limited time offer!</p>
+    <div class="offer-code">GROOM20</div><br>
+    <a href="#mens-products" class="btn-primary-gold" style="display:inline-block; margin-top:15px;">SHOP WEDDING WEAR</a>
+  </div>
+  <div style="z-index:2; text-align:center; color:white;">
+    <div style="font-size:80px; font-weight:700; line-height:1; font-family:'Playfair Display',serif;">20%</div>
+    <div style="color:rgba(255,255,255,0.7); font-size:14px; letter-spacing:3px; text-transform:uppercase;">Extra Off</div>
+    <div style="color:#b77b4b; font-size:12px; margin-top:5px;">On Sherwanis & Jodhpuris</div>
+  </div>
+</div>
+
+<!-- WEDDING SPECIAL -->
+<section class="wedding-special" id="wedding-special">
+  <h2 class="section-title" style="text-align:center; margin-bottom:8px;">Wedding Wear Specials</h2>
+  <p class="section-sub" style="text-align:center; color:#888; margin-bottom:35px;">Dress like royalty on your special day</p>
+  <div class="wedding-cards">
+    <div class="wedding-card">
+      <img src="../Women/images/mens.jpg" alt="Sherwani">
+      <div class="wedding-card-content">
+        <h3>Royal Sherwanis</h3>
+        <p>Embroidered, zardosi & bandhgala styles for the groom</p>
+        <a href="#">EXPLORE COLLECTION →</a>
+      </div>
+    </div>
+    <div class="wedding-card">
+      <img src="../Women/images/f1.jpg" alt="Jodhpuri">
+      <div class="wedding-card-content">
+        <h3>Jodhpuri Tuxedos</h3>
+        <p>Fusion styles with embroidery for modern grooms</p>
+        <a href="#">EXPLORE COLLECTION →</a>
+      </div>
+    </div>
+    <div class="wedding-card">
+      <img src="../Women/images/f7.jpg" alt="Indo Western">
+      <div class="wedding-card-content">
+        <h3>Indo Western Sets</h3>
+        <p>Contemporary fusion for the fashion-forward groom</p>
+        <a href="#">EXPLORE COLLECTION →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STYLE GUIDE -->
+<section class="style-guide">
+  <h2 class="section-title">Men's Style Guide</h2>
+  <p class="section-sub">Dress right for every occasion</p>
+  <div class="guide-cards">
+    <div class="guide-card">
+      <div class="guide-icon">💍</div>
+      <h4>Wedding & Reception</h4>
+      <p>Make a royal statement on the most important day of your life.</p>
+      <ul class="guide-list">
+        <li>Heavy embroidered Sherwanis</li>
+        <li>Silk Jodhpuri Tuxedos</li>
+        <li>Achkan with dupatta</li>
+        <li>Gold & Zardosi work</li>
+      </ul>
+    </div>
+    <div class="guide-card">
+      <div class="guide-icon">🎶</div>
+      <h4>Sangeet & Mehendi</h4>
+      <p>Light, colorful & comfortable for festive dance nights.</p>
+      <ul class="guide-list">
+        <li>Floral printed kurta sets</li>
+        <li>Thread work bandhgalas</li>
+        <li>Pastel Nehru jacket sets</li>
+        <li>Dhoti kurta styles</li>
+      </ul>
+    </div>
+    <div class="guide-card">
+      <div class="guide-icon">🪔</div>
+      <h4>Festivals & Casual Events</h4>
+      <p>Festive and comfortable for celebrations and rituals.</p>
+      <ul class="guide-list">
+        <li>Cotton & linen kurtas</li>
+        <li>Printed kurta pyjamas</li>
+        <li>Resham embroidered sets</li>
+        <li>Lightweight sherwanis</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FABRIC SECTION -->
+<section class="fabric-section">
+  <h2 class="section-title">Shop By Fabric</h2>
+  <p class="section-sub">Premium materials for maximum comfort</p>
+  <div class="fabric-grid">
+    <div class="fabric-card">
+      <div class="fabric-swatch" style="background:linear-gradient(135deg,#f5e6c8,#c8a862);"></div>
+      <div class="fab-name">Pure Silk</div>
+      <div class="fab-desc">Royal & Luxurious</div>
+    </div>
+    <div class="fabric-card">
+      <div class="fabric-swatch" style="background:linear-gradient(135deg,#e8e8e8,#c0c0c0);"></div>
+      <div class="fab-name">Pashmina</div>
+      <div class="fab-desc">Soft & Warm</div>
+    </div>
+    <div class="fabric-card">
+      <div class="fabric-swatch" style="background:linear-gradient(135deg,#f0ede5,#d5cfc3);"></div>
+      <div class="fab-name">Cotton</div>
+      <div class="fab-desc">Breathable & Cool</div>
+    </div>
+    <div class="fabric-card">
+      <div class="fabric-swatch" style="background:linear-gradient(135deg,#dde8f0,#b0c8dc);"></div>
+      <div class="fab-name">Linen</div>
+      <div class="fab-desc">Casual & Crisp</div>
+    </div>
+    <div class="fabric-card">
+      <div class="fabric-swatch" style="background:linear-gradient(135deg,#f5e0e8,#e0b8c8);"></div>
+      <div class="fab-name">Georgette</div>
+      <div class="fab-desc">Flowy & Elegant</div>
+    </div>
+  </div>
+</section>
+
+<!-- FESTIVE PICKS -->
+<section class="festive-picks">
+  <h2>Festive Season Picks</h2>
+  <p class="sub">Perfect for Diwali, Eid, Navratri & more</p>
+  <div class="festive-grid">
+    <div class="festive-card">
+      <div class="festive-tag">🪔 DIWALI PICK</div>
+      <img src="../Women/images/p5.jpg" alt="Festive">
+      <div class="festive-info">
+        <h4>Gold Silk Kurta Set with Sequin Embroidery</h4>
+        <div class="festive-price">₹7,499 <span class="old">₹9,999</span></div>
+      </div>
+    </div>
+    <div class="festive-card">
+      <div class="festive-tag" style="background:#1a7a3a;">🌙 EID SPECIAL</div>
+      <img src="../Women/images/f2.jpg" alt="Festive">
+      <div class="festive-info">
+        <h4>Pista Green Silk Kurta Pant with Thread Work</h4>
+        <div class="festive-price">₹5,099 <span class="old">₹5,999</span></div>
+      </div>
+    </div>
+    <div class="festive-card">
+      <div class="festive-tag" style="background:#c0392b;">❤️ WEDDING SEASON</div>
+      <img src="../Women/images/mens.jpg" alt="Wedding">
+      <div class="festive-info">
+        <h4>Deep Red Embroidered Sherwani Groom Set</h4>
+        <div class="festive-price">₹21,509 <span class="old">₹25,999</span></div>
+      </div>
+    </div>
+    <div class="festive-card">
+      <div class="festive-tag" style="background:#7b4f9e;">🎶 SANGEET NIGHT</div>
+      <img src="../Women/images/f7.jpg" alt="Sangeet">
+      <div class="festive-info">
+        <h4>Multicolour Brushstroke Print Kurta Set</h4>
+        <div class="festive-price">₹8,479 <span class="old">₹10,599</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIZE GUIDE BANNER -->
+<div class="size-guide-banner">
+  <div>
+    <h3>Not Sure About Your Size?</h3>
+    <p>Use our detailed size guide to find your perfect fit. We offer XS to 5XL.</p>
+  </div>
+  <button class="size-btn" onclick="alert('Size guide coming soon!')">VIEW SIZE GUIDE</button>
+</div>
+
+<!-- CUSTOMER REVIEWS -->
+<section class="reviews-section">
+  <h2 class="section-title">What Our Men Are Saying</h2>
+  <p class="section-sub" style="color:#888;">Real reviews from real customers</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Wore the Pashmina Kurta Set to my cousin's wedding — got compliments all night. The fabric quality is outstanding and the fit was perfect!"</p>
+      <div class="reviewer">Arjun Mehta <span>— Mumbai | Verified Buyer</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The Navy Blue Sherwani was exactly as shown. Zari work is beautiful and the delivery was on time. ASHI Fashion is now my go-to for ethnic wear."</p>
+      <div class="reviewer">Rahul Sharma <span>— Delhi | Verified Buyer</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p class="review-text">"Ordered the Indo Western set for my reception. Absolutely loved it. Would definitely recommend to anyone looking for premium ethnic menswear."</p>
+      <div class="reviewer">Karan Patel <span>— Ahmedabad | Verified Buyer</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFCANVAS CART -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas">
+  <div class="offcanvas-header">
+    <h5>Your Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="cartItems"></div>
+    <button onclick="location.href='../Checkout/checkout.html'" class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>MEN'S WEAR</h3>
+      <a>Kurta Sets</a><a>Sherwanis</a><a>Indo Western</a>
+      <a>Jodhpuri Suits</a><a>Nehru Jacket Sets</a><a>Accessories</a>
+    </div>
+    <div class="footer-col">
+      <h3>ABOUT US</h3>
+      <a>About Us</a><a>Contact Us</a><a>Blog</a>
+      <a>Our Stores</a><a>Careers</a>
+    </div>
+    <div class="footer-col">
+      <h3>POLICIES</h3>
+      <a>Terms & Conditions</a><a>Shipping</a>
+      <a>Returns</a><a>Privacy Policy</a><a>FAQ's</a>
+    </div>
+    <div class="footer-col">
+      <h3>MY ACCOUNT</h3>
+      <a>Shopping Bag</a><a>Wishlist</a>
+      <a>Order History</a><a>Order Tracking</a>
+    </div>
+    <div class="footer-col">
+      <h3>FOLLOW US</h3>
+      <a><i class="fa-brands fa-instagram"></i> Instagram</a>
+      <a><i class="fa-brands fa-facebook"></i> Facebook</a>
+      <a><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a><i class="fa-brands fa-youtube"></i> YouTube</a>
+    </div>
+    <div class="footer-col">
+      <h3>GET IN TOUCH</h3>
+      <a>+91 (22) 4890 0416</a>
+      <a>mens@ashifashion.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2007 - 2026 ASHI Fashion Private Limited | All Rights Reserved</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="mens.js"></script>
+</body>
+</html>

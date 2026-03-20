@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ASHI Fashion</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT MARQUEE BAR -->
+<div class="announcement-bar">
+  <div class="marquee-track">
+    <span>Free Shipping on orders above 10,000+</span>
+    <span>10,000+ Happy Customers</span>
+    <span>New Eid Collection 2026 Just Dropped</span>
+    <span>Easy Returns & Exchange</span>
+    <span>Video Call Shopping Available 24x7</span>
+    <span>Secure Payments | 100% Authentic</span>
+    <span>Free Shipping on orders above 10,000+</span>
+    <span>10,000+ Happy Customers</span>
+    <span>New Eid Collection 2026 Just Dropped</span>
+    <span>Easy Returns & Exchange</span>
+    <span>Video Call Shopping Available 24x7</span>
+    <span>Secure Payments | 100% Authentic</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="top-bar">
+    <div class="top-left">
+        <a class="active">WOMEN</a>
+        <a href="mens.html">MEN</a>
+        <a>BRIDAL</a>
+        <a class="luxe">LUXE</a>
+        <a class="store"><i class="fa fa-store"></i> Find Store</a>
+    </div>
+
+    <!-- LOGO -->
+    <div class="logo">ASHI <span>FASHION</span></div>
+
+    <!-- SEARCH-BAR -->
+    <div class="top-right">
+      <div class="search-box">
+        <i class="fa fa-search" id="searchIcon"></i>
+        <input type="text" id="searchInput" placeholder="Search...">
+      </div>
+
+        <!-- REGISTER SECTION -->
+        <div class="user-section">
+          <a href="Registration.html" id="registerBtn" style="color:black; text-decoration:none;">
+            <i class="fa fa-user"></i> 
+          </a>
+            <span id="userName" style="display:none; font-weight:600;"></span>
+        </div>
+
+        <!-- WISH LIST -->
+        <i class="fa fa-heart"></i>
+
+        <!-- CART BOX -->
+        <div class="cart-box">
+        <i class="fa fa-bag-shopping" id="cartIcon" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" style="cursor:pointer;"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+
+        <!-- LOGOUT BUTTON -->
+        <div class="logout" style="display:none;">
+            <button onclick="logout()" style="padding:6px 12px; background:#1a1a2e; color:white; border:none; cursor:pointer; font-size:13px; border-radius:4px;">Logout</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY-BAR -->
+  <div class="category-bar">
+    <a class="badge">NEW IN</a>
+    <a class="badge">SALE</a>
+    <a onclick="filterByCategory('eid')">EID STORE</a>
+    <a onclick="filterByCategory('saree')">SAREE</a>
+    <a onclick="filterByCategory('salwar')">SALWAR KAMEEZ</a>
+    <a onclick="filterByCategory('lehenga')">LEHENGAS</a>
+    <a onclick="filterByCategory('indo')">INDO WESTERN</a>
+    <a class="dark">MEN</a>
+    <a>BRIDAL</a>
+    <a>CO-ORDS</a>
+    <a>BLOUSE</a>
+    <a>JEWELLERY</a>
+    <a>BESTSELLERS</a>
+    <a>WEDDING</a>
+    <a>COLLECTION</a>
+  </div>
+</header>
+
+<!-- TRUST -->
+<section class="trust-section reveal">
+    <div class="trust">
+     <h2><span id="counter">0</span>+ Happy Customers</h2>
+     <p class="small-line">10,000+ orders delivered successfully</p>
+     <p>Trusted across India</p>
+    </div>
+    <div class="trust-bar">
+       <div class="trust-item">
+         <i class="fa-solid fa-star"></i> 4.8/5 Rating
+       </div>
+       <div class="divider"></div>
+       <div class="trust-item">
+         <i class="fa-solid fa-truck"></i> Fast Delivery
+       </div>
+       <div class="divider"></div>
+       <div class="trust-item">
+         <i class="fa-solid fa-rotate-left"></i> Easy Returns
+       </div>
+       <div class="divider"></div>
+       <div class="trust-item">
+         <i class="fa-solid fa-lock"></i> Secure Payments
+       </div>
+       </div>
+</section>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+    <p class="hero-topline">Luxury Ethnic Wear Collection</p>
+    <p class="hero-badge">✦ New Collection 2026</p> 
+    <p class="offer">Free Shipping on orders above ₹999</p>
+    <h1>ELEVATE <br><span>Your Style!</span></h1>
+    <p>Discover premium fashion that defines your personality.</p>
+    <a href="#" class="hero-btn">SHOP NOW</a>
+    </div>
+
+    <!-- HERO RIGHT SLIDER -->
+    <div class="hero-slider">
+      <img src="images/slide1.jpg" class="slide active">
+      <img src="images/slide2.jpg" class="slide">
+      <img src="images/slide3.jpg" class="slide">
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+    <div class="card">
+      <img src="images/Saree.jpg" alt="product">
+      <div class="overlay">
+      <h3>Saree On Sale</h3>
+      <h4>Upto 50%</h4>
+      <button>ON SALE</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/Bridal.jpg" />
+      <div class="overlay">
+      <h3>Bridal Wear On Sale</h3>
+      <h4>Upto 50%</h4>
+      <button>ON SALE</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/suits.jpg" />
+      <div class="overlay">
+      <h3>Suits On Sale</h3>
+      <h4>Upto 50%</h4>
+      <button>ON SALE</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/lehenga.jpg" />
+      <div class="overlay">
+      <h3>Lehenga Sale</h3>
+      <h4>Upto 40%</h4>
+      <button>ON SALE</button>
+      </div>
+    </div>
+</section>
+  
+<!-- SHOP THE LOOK-->
+<section class="look-section">
+  <h2>Shop The Look</h2>
+  <div class="look-container">
+    <div class="look-track">
+      <div class="look-item">
+        <video src="Video/v1.mp4" muted loop></video>
+      </div>
+      <div class="look-item">
+        <video src="Video/v2.mp4" muted loop playsinline></video>
+      </div>
+      <div class="look-item">
+        <video src="Video/v3.mp4" muted loop playsinline></video>
+      </div>
+      <div class="look-item active">
+        <video src="Video/v4.mp4" muted loop playsinline></video>
+      </div>
+      <div class="look-item">
+        <video src="Video/v5.mp4" muted loop playsinline></video>
+      </div>
+      <div class="look-item">
+        <video src="Video/v6.mp4" muted loop playsinline></video>
+      </div>
+      <div class="look-item">
+        <video src="Video/v7.mp4" muted loop playsinline></video>
+      </div>
+    </div>
+    <button class="arrow left">&#10094;</button>
+    <button class="arrow right">&#10095;</button>
+  </div>
+</section>
+
+<!-- BIGGEST SAVINGS -->
+<section class="biggest-savings">
+  <h2>Biggest Savings</h2>
+
+  <div class="product-controls">
+
+  <!-- Search -->
+  <input type="text" id="productSearch" placeholder="Search products...">
+
+  <!-- Sort -->
+  <select id="sort">
+    <option value="">Sort By</option>
+    <option value="low">Price Low → High</option>
+    <option value="high">Price High → Low</option>
+    <option value="az">Name A → Z</option>
+  </select>
+
+</div>
+
+  <!-- PRODUCT TRACK  -->
+  <div class="product-track">
+    <p id="noProducts" style="display:none; text-align:center; margin-top:20px; font-weight:600;">
+         No products found
+    </p>
+    <div class="product-card" data-name="Sky Blue Chikankari Saree" data-price="₹6997"
+     onclick="location.href='product.html?id=1'">
+      <i class="fa fa-heart heart-icon" data-id="1"></i>
+      <img src="images/p1.jpg">
+      <h4>Sky Blue Chikankari Saree</h4>
+      <p class="price">₹6,997 <span>₹9,995</span> <b>30% OFF</b></p>
+    </div>
+    <div class="product-card" data-name="Purple Silk Bandhani Saree" data-price="₹7996"
+     onclick="location.href='product.html?id=2'">
+      <i class="fa fa-heart heart-icon" data-id="2"></i>
+      <img src="images/p2.jpg">
+      <h4>Purple Silk Bandhani Saree</h4>
+      <p class="price">₹7,996 <span>₹9,995</span> <b>20% OFF</b></p>
+    </div>
+    <div class="product-card" data-name="Black Kurta Palazzo Set" data-price="₹12400"
+     onclick="location.href='product.html?id=3'">
+      <i class="fa fa-heart heart-icon" data-id="3"></i>
+      <img src="images/p3.jpg">
+      <h4>Black Kurta Palazzo Set</h4>
+      <p class="price">₹12,400 <span>₹15,500</span> <b>20% OFF</b></p>
+    </div>
+    <div class="product-card" data-name="Wine Embroidered Set" data-price="₹11996"
+     onclick="location.href='product.html?id=4'">
+      <i class="fa fa-heart heart-icon" data-id="4"></i>
+      <img src="images/p4.jpg">
+      <h4>Wine Embroidered Set</h4>
+      <p class="price">₹11,996 <span>₹14,995</span> <b>20% OFF</b></p>
+    </div>
+    <div class="product-card" data-name="Pashmina Kurta Set" data-price="₹4059"
+     onclick="location.href='product.html?id=5'">
+      <i class="fa fa-heart heart-icon" data-id="5"></i>
+      <img src="images/p5.jpg">
+      <h4>Pashmina Kurta Set</h4>
+      <p class="price">₹4,059 <span>₹5,799</span> <b>30% OFF</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- TOP COLLECTION -->
+<section class="top-collection">
+  <h2><br>Top Collection</h2>
+  <div class="collection-grid">
+    <div class="collection-card">
+      <img src="images/c1.jpg">
+      <div class="overlay">
+        <h3>Embroidered Saree Styles</h3>
+        <button>ON SALE</button>
+      </div>
+    </div>
+    <div class="collection-card">
+      <img src="images/c2.jpg">
+      <div class="overlay">
+        <h3>Palazzo Suits Edit</h3>
+        <button>ON SALE</button>
+      </div>
+    </div>
+    <div class="collection-card">
+      <img src="images/c3.jpg">
+      <div class="overlay">
+        <h3>Bridal Wear Lehanga</h3>
+        <button>ON SALE</button>
+      </div>
+    </div>
+    <div class="collection-card">
+      <img src="images/c4.jpg">
+      <div class="overlay">
+        <h3>Heritage Woven Sarees</h3>
+        <button>ON SALE</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SHOPPING -->
+<section class="video-shopping">
+  <img src="images/video call shopping.png" alt="Video Shopping">
+  <div class="video-content">
+    <h1>The Ultimate In-Store Experience <br> Via 24x7 Video Shopping</h1>
+    <p>Our Stylists On Call Can Speak English, Hindi, Gujarati & Marathi</p>
+    <button>START CALL NOW</button>
+  </div>
+</section>
+
+<!-- CUSTOMER FAVORITES -->
+<section class="customer-favorites">
+  <h2>Customer Favorites - Now on SALE</h2>
+  <div class="customer-product">
+    <div class="customer-card">
+      <img src="images/f1.jpg">
+      <h4>Pashmina Kurta Pant Set for Women</h4>
+      <p class="prices">₹4,059<span>₹5,799</span> <b>30% OFF</b></p>
+    </div>
+    <div class="customer-card">
+      <img src="images/f2.jpg">
+      <h4>Pista Green Womens Kurta Pant Set</h4>
+      <p class="prices">₹5,099<span>₹5,999</span> <b>15% OFF</b></p>
+    </div>
+    <div class="customer-card">
+      <img src="images/f3.jpg">
+      <h4>Pink Satin Bridesmaid Lehenga With Hand Dyed Chevron Print Choli</h4>
+      <p class="prices">₹15,930<span>₹17,700</span> <b>10% OFF</b></p>
+    </div>
+    <div class="customer-card">
+      <img src="images/f4.jpg">
+      <h4>Orange Chinon Indo Western Set With Zardosi Work</h4>
+      <p class="prices">₹17,996<span>₹19,995</span> <b>10% OFF</b></p>
+    </div>
+    <div class="customer-card">
+      <img src="images/f5.jpg">
+      <h4>Yellow Khaddi Georgette Bandhani Weave Cutdana Ready To Wear Saree</h4>
+      <p class="prices">₹11,696<span>₹12,995</span> <b>10% OFF</b></p>
+    </div>
+    <div class="customer-card">
+      <img src="images/f6.jpg">
+      <h4>Beige Georgette Anarkali Suit With Sequins And Thread Embroidery</h4>
+      <p class="prices">₹15,750<span>₹17,500</span> <b>10% OFF</b></p>
+    </div>
+    <div class="customer-card">
+      <img src="images/f7.jpg">
+      <h4>Multicolour Silk Kurta Set For Women With Artistic Brushstroke Print</h4>
+      <p class="prices">₹8,479<span>₹10,599</span> <b>20% OFF</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- EDITOR'S PICKS -->
+<section class="editors-picks">
+  <h2>Editor's Picks</h2>
+  <div class="picks-container">
+
+    <!-- LEFT CARD -->
+    <div class="pick-card beige-card">
+      <div class="pick-text1">
+        <h3>Trendy Blouse</h3>
+        <p>ON SALE</p>
+        <button>SHOP NOW</button>
+      </div>
+      <div class="pick-image1">
+        <img src="images/E1.png" alt="">
+      </div>
+    </div>
+
+    <!-- RIGHT CARD -->
+    <div class="pick-card white-card">
+      <div class="pick-image2">
+        <img src="images/E2.png" alt="">
+      </div>
+      <div class="pick-text2">
+        <h3>Indo Fusion Fits</h3>
+        <p>ON SALE</p>
+        <button>SHOP NOW</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JEWELLERY-SALE -->
+<section class="jewellery-sale">
+  <h2>Jewellery On SALE</h2>
+  <div class="jewellery-container">
+    <div class="jewellery-card">
+      <img src="images/J1.jpg">
+      <h4>Gold Finish Necklace Set With Traditional Temple Motifs And Pink Simulated Stones</h4>
+      <p class="priceing">₹10,115<span>₹11,900</span> <b>15% OFF</b></p>
+    </div>
+    <div class="jewellery-card">
+      <img src="images/J2.jpg">
+      <h4>Gold Finish Jhumka Earrings In Mix Metal With Floral Stud And Green and White Bead Tassels</h4>
+      <p class="priceing">₹9,860<span>₹11,600</span> <b>15% OFF</b></p>
+    </div>
+    <div class="jewellery-card">
+      <img src="images/J3.jpg">
+      <h4>Gold Finish Choker Necklace Set In Mix Metal With Traditional Kundan Style</h4>
+      <p class="priceing">₹11,900<span>₹14,000</span> <b>15% OFF</b></p>
+    </div>
+    <div class="jewellery-card">
+      <img src="images/J4.jpg">
+      <h4>Green Rhodium Plated Cz Diamond Necklace Set with Anti Tarnish Finish</h4>
+      <p class="priceing">₹17,996<span>₹19,995</span> <b>15% OFF</b></p>
+    </div>
+    <div class="jewellery-card">
+      <img src="images/J5.jpg">
+      <h4>Gold Finish Necklace Set With Traditional Temple Motifs And Pink Simulated Stones</h4>
+      <p class="priceing">₹10,115<span>₹11,900</span> <b>15% OFF</b></p>
+    </div>
+    <div class="jewellery-card">
+      <img src="images/J6.jpg">
+      <h4>Gold Finish Necklace Set With Intricate Traditional Temple Motifs</h4>
+      <p class="priceing">₹4,250<span>₹5,000</span> <b>15% OFF</b></p>
+    </div>
+    <div class="jewellery-card">
+      <img src="images/J7.jpg">
+      <h4>Gold Finish Jhumka Earrings In Polki With White Simulated Pearls</h4>
+      <p class="priceing">₹8,479<span>₹10,599</span> <b>15% OFF</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- WEDDING ENERGY-->
+<section class="wedding-energy">
+    <div class="wedding-text">
+    <p class="wedding-topline">Wedding Guest Picks Under Budget</p>
+    <p class="smart">Big Wedding Energy, Smart Prices</p>
+    <a href="#" class="wedding-btn">SHOP NOW</a>
+    </div>
+    <div class="wedding-image">
+      <img src="images/w1.jpg" class="w-img">
+    </div>  
+</section>
+
+<!-- OFFCANVAS CART-->
+ <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas">
+  <div class="offcanvas-header">
+    <h5>Your Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+  <div id="cartItems"></div>
+  <button onclick="location.href='checkout.html'" class="checkout-btn">
+    Checkout
+  </button>
+</div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section reveal">
+  <h2>Stay in Style</h2>
+  <p>Subscribe to receive exclusive offers, new arrivals & styling tips</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="Enter your email address" id="newsletterEmail">
+    <button onclick="subscribeNewsletter()">SUBSCRIBE</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>DESIGNER WEAR</h3>
+      <a>Salwar Kameez</a>
+      <a>Sarees</a>
+      <a>Lehenga</a>
+      <a>Gowns</a>
+      <a>Kidswear</a>
+      <a>Saree Blouse</a>
+      <a>Kurtis</a>
+      <a>Indowestern Styles</a>
+      <a>Mens</a>
+      <a>Accessories</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>ABOUT US</h3>
+      <a>About Us</a>
+      <a>Contact Us</a>
+      <a>Blog</a>
+      <a>Web Stories</a>
+      <a>Testimonial</a>
+      <a>Press</a>
+      <a>Lookbook</a>
+      <a>Our Stores</a>
+      <a>Video Call Appointment</a>
+      <a>Careers</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>POLICIES</h3>
+      <a>Terms & Conditions</a>
+      <a>Shipping</a>
+      <a>Returns</a>
+      <a>Privacy Policy</a>
+      <a>Payment Policy</a>
+      <a>FAQ's</a>
+      <a>Sustainability</a>
+      <a>Grievances</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>MY ACCOUNT</h3>
+      <a>Shopping Bag</a>
+      <a>Wishlist</a>
+      <a>Order History</a>
+      <a>Order Tracking</a>
+      <a>Buy in bulk</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>FOLLOW US</h3>
+      <a><i class="fa-brands fa-instagram"></i> Instagram</a>
+      <a><i class="fa-brands fa-facebook"></i> Facebook</a>
+      <a><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a><i class="fa-brands fa-youtube"></i> YouTube</a>
+      <a><i class="fa-brands fa-pinterest"></i> Pinterest</a>
+      <a><i class="fa-brands fa-twitter"></i> Twitter</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>GET IN TOUCH</h3>
+      <a><i class="fa fa-phone"></i> +91 (22) 4890 0416</a>
+      <a><i class="fa fa-envelope"></i> <span class="__cf_email__" data-cfemail="1d74737b725d7c6e75747b7c6e75747273337e7270">[email&#160;protected]</span></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2007 - 2026 ASHI Fashion Private Limited | All Rights Reserved
+  </div>
+</footer>
+
+<!-- BACK TO TOP BUTTON -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fa fa-chevron-up"></i>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="cart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

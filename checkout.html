@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - ASHI Fashion</title>
+  <link rel="stylesheet" href="../Women/style.css">
+</head>
+<body>
+  <div class="checkout-container">
+    <h2>Checkout</h2>
+    <div id="checkoutItems"></div>
+    <div id="totalAmount" class="checkout-total"></div>
+
+    <form id="checkoutForm" class="checkout-form">
+      <label>Full Name</label><input type="text" id="fullName" required><span id="nameError" class="form-error"></span>
+      <label>Address</label><textarea id="address" rows="2" required></textarea><span id="addressError" class="form-error"></span>
+      <label>City</label><input type="text" id="city" required><span id="cityError" class="form-error"></span>
+      <label>Pincode</label><input type="text" id="pincode" maxlength="6" required><span id="pinError" class="form-error"></span>
+      <label>Phone</label><input type="text" id="phone" maxlength="10" required><span id="phoneError" class="form-error"></span>
+      <button type="submit" class="checkout-btn">Place Order</button>
+    </form>
+
+    <p><a href="../Cart/cart.html">Back to Cart</a></p>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
